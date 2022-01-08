@@ -31,5 +31,6 @@ Things you may want to cover:
 * push to github
 * push to heroku
 * add user functionality with authentication
-* 
+* update user fields
+* link ideas and models
 * 

@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     if @article.save
       redirect_to @article
@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+    @article.user_id = current_user
 
     if @article.update(article_params)
       redirect_to @article
@@ -43,6 +44,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+    def user
+      current_user
+    end
+
     def article_params
       params.require(:article).permit(:title, :body, :status)
     end

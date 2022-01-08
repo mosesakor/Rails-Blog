@@ -1,5 +1,9 @@
 <h1>Articles</h1>
 
+<% name = current_user.present? ? current_user.email : 'Stranger' %>
+
+<h1>Welcome, <%= name %> </h1>
+
 Our blog has <%= Article.public_count %> public articles and counting!
 
 <ul>
