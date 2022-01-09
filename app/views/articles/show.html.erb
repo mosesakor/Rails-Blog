@@ -1,6 +1,12 @@
 <div>
   <div>
-    <p><span><%= @article.title %></span><span><%=@article.created_at%></span></p>
+    <h2><%= @article.title %></h2>
+  </div>
+  <div>
+    <p>
+      <span>by <%= @article.user.first_name %></span> |
+      <span><%=@article.created_at%></span>
+    </p>
   </div>
   <div>
     <p><%= @article.body %></p>
