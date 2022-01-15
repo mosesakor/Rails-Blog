@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
     @articles = Article.all
   end
@@ -27,8 +28,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.user_id = current_user
-
+    
     if @article.update(article_params)
       redirect_to @article
     else
