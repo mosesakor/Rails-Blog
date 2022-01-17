@@ -18,6 +18,10 @@
      background: #eee;
  }
 
- .main-container {
-     background: white;
+ .container {
+    max-width: 700px;
+    width: 100%;
+    margin: 25px auto;
+    background: white;
+    padding: 30px;
  }

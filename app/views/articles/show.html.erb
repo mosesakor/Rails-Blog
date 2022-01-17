@@ -3,7 +3,7 @@
     <h2><%= @article.title %></h2>
   </div>
   <div>
-    <p>
+    <p >
       <span>by <%= @article.user.first_name %></span> |
       <span>on <%=@article.created_at.strftime("%d %^b %Y")%></span> |
     </p>
@@ -21,12 +21,14 @@
     </ul>
   <% end %>
 
-    
-
-  <h2>Comments</h2>
-  <%= render @article.comments %>
+  <hr>
+  <div>
+    <h2 class="mt-4 mb-4">Comments</h2>
+    <%= render @article.comments %>
+  </div>
+  
 
   <h2>Add a comment:</h2>
-  <%= render 'comments/form' %>
+  <%= render partial: 'comments/form', locals: { user: @article.user }%>
 
 </div>

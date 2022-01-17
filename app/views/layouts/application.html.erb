@@ -14,14 +14,8 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <div class="row">
-      <div class="col">
-      </div>
-      <div class="main-container col-6">
-        <%= yield %>
-      </div>
-      <div class="col">
-      </div>
+    <div class="container">
+      <%= yield %>
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
