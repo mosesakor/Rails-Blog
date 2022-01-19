@@ -1,11 +1,11 @@
 <div>
-  <div>
-    <h2><%= @article.title %></h2>
+  <div class="mb-0 p-0">
+    <p class="mb-0 p-0 text-lg"><%= @article.title %></p>
   </div>
-  <div>
-    <p >
-      <span>by <%= @article.user.first_name %></span> |
-      <span>on <%=@article.created_at.strftime("%d %^b %Y")%></span> |
+  <div class="">
+    <p class="">
+      <span class="text-sm mb-0 p-0 text-muted">by <%= @article.user.first_name %> | </span>
+      <span class="text-sm mb-0 p-0 text-muted">on <%=@article.created_at.strftime("%d %b %Y")%> | </span>
     </p>
   </div>
   <div>
@@ -20,15 +20,15 @@
       data: { confirm: "Are you sure?" } %></li>
     </ul>
   <% end %>
-
   <hr>
-  <div>
-    <h2 class="mt-4 mb-4">Comments</h2>
-    <%= render @article.comments %>
+  <div class="d-flex flex-column-reverse">
+    <div>
+      <p>
+      <%= render @article.comments %>
+    </div>
+    <div>
+      <h2 class="mt-2 mb-2">Discussion</h2>
+      <%= render partial: 'comments/form', locals: { user: @article.user }%>
+    </div>
   </div>
-  
-
-  <h2>Add a comment:</h2>
-  <%= render partial: 'comments/form', locals: { user: @article.user }%>
-
 </div>

@@ -14,6 +14,11 @@
  *= require_self
  */
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
  body {
      background: #eee;
  }
@@ -22,6 +27,43 @@
     max-width: 700px;
     width: 100%;
     margin: 25px auto;
+    margin-top: 0;
     background: white;
     padding: 30px;
  }
+
+ .text-sm {
+    font-size: 12px;
+ }
+
+ .text-md {
+     font-size: 14px;
+ }
+
+ .text-lg {
+     font-size: 2rem;
+     font-weight: bold;
+ }
+
+ .card a {
+     color: #343a40;
+     text-decoration: none;
+
+ }
+
+ .card a:hover {
+     color: blue
+ }
+
+ .blue-hover:hover {
+     color: blue;
+ }
+ .card-component {
+
+ }
+
+ div {
+
+ }
+
+ 

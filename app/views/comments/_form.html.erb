@@ -1,12 +1,7 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
   <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
+    <% form.label :body%><br>
+    <%= form.text_area :body, cols: 60, rows: 5, placeholder: "Add to the discussion", class: "p-2 border border-secondary rounded"%>
   </p>
 
   <p>
@@ -18,6 +13,6 @@
   <%= form.hidden_field :user_id, value: user.id %>
   
   <p>
-    <%= form.submit %>
+    <%= form.submit "Submit", class: "btn btn-primary"%>
   </p>
 <% end %>

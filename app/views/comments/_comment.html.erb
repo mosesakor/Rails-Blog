@@ -1,12 +1,11 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.user.first_name %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
+<div class="card p-3 pb-0 m-2 mb-4 text-dark">
+  <p class="text-md">
+    <span class="mb-0 p-0 text-muted"><%= comment.user.first_name %> <%= comment.user.last_name %> • </span>
+  <span class="p-0 text-muted"><%=comment.created_at.strftime("%d %b %Y")%></span>
+  </p>
+  
+  <p class=""> <%=comment.body%> </p>
+</div>
 
 <p>
   <%= link_to 'Destroy Comment', [comment.article, comment],

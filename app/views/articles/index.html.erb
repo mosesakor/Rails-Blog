@@ -1,19 +1,12 @@
-<h1>Articles</h1>
-
-<% name = current_user.present? ? current_user.email : 'Stranger' %>
-
-<h1>Welcome, <%= name %> </h1>
-
-Our blog has <%= Article.public_count %> public articles and counting!
-
-<ul>
-  <% @articles.each do |article| %>
-    <% unless article.archived? %>
-      <li>
-        <%= link_to article.title, article %>
-      </li>
+<div>
+    <% @articles.each do |article| %>
+      <% unless article.archived? %>
+        <div class="card p-3 m-2 mb-4 text-dark">
+            <p class="text-sm-left mb-0 p-0 font-weight-bold"><%=article.user.first_name %> <%= article.user.last_name %></p>
+            <p class="text-sm mb-0 p-0 text-muted">Posted on <%=article.created_at.strftime("%d %b %Y")%></p>
+            <%= link_to article.title, article, class: "text-lg" %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+</div>
 
-<%= link_to "New Article", new_article_path %>
