@@ -32,7 +32,9 @@ gem "jbuilder"
 # Devise Authentication
 gem "devise"
 
-gem "bootstrap", "~> 5.0.2"
+gem "cssbundling-rails"
+
+
 
 
 
