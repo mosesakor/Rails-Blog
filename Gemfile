@@ -34,6 +34,8 @@ gem "devise"
 
 gem "cssbundling-rails"
 
+gem "jsbundling-rails"
+
 
 
 
