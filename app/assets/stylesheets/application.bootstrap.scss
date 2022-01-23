@@ -1,10 +1,15 @@
 @import 'bootstrap/scss/bootstrap';
+@import "bootstrap-icons/font/bootstrap-icons";
 
 * {
     padding: 0;
     margin: 0;
 }
 
+.tester {
+    border: 3px solid red;
+    display: inline;
+}
  body {
      background: #eee;
  }
