@@ -1,4 +1,4 @@
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+<%= form_with model: [ @article, @comment] do |form| %>
   <p>
     <% form.label :body%><br>
     <%= form.text_area :body, cols: 60, rows: 5, placeholder: "Add to the discussion", class: "p-2 border border-secondary rounded mw-100"%>
@@ -10,7 +10,6 @@
   </p>
 
 
-  <%= form.hidden_field :user_id, value: user.id %>
   
   <p>
     <%= form.submit "Submit", class: "btn btn-primary"%>

@@ -1,20 +1,19 @@
 <div>
-  <div class="mb-0 p-0">
+  <div class="d-flex flex-row mb-0 p-0">
     <p class="mb-0 p-0 text-lg"><%= @article.title %></p>
+    <% if current_user != nil && current_user.id == @article.user_id %>
+      <div class="btn-group ms-auto mt-2 mb-2 csm-btn-container" role="group" aria-label="Basic example">
+        <%= button_to "Edit", edit_article_path(@article), class: "btn btn-outline-light border-0 csm-btn", method: "get" %>
+        <%= button_to "Delete", article_path(@article),
+                class: "btn btn-outline-light  border-0 border-white csm-btn",
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+      </div>
+    <% end %>
   </div>
-  <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
   <div class="">
     <p class="">
-      <span class="text-sm mb-0 p-0 text-muted">by <%= @article.user.first_name %> | </span>
+      <span class="text-sm mb-0 p-0 text-muted">by <%= @article.user.first_name %> <%= @article.user.last_name %>| </span>
       <span class="text-sm mb-0 p-0 text-muted">on <%=@article.created_at.strftime("%d %b %Y")%> | </span>
     </p>
   </div>
@@ -22,14 +21,7 @@
     <p><%= @article.body %></p>
   </div>
 
-  <% if current_user != nil && current_user.id == @article.user_id %>
-    <ul>
-      <li><%= link_to "Edit", edit_article_path(@article) %></li>
-      <li><%= link_to "Destroy", article_path(@article),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %></li>
-    </ul>
-  <% end %>
+
   <hr>
   <div class="d-flex flex-column-reverse">
     <div>

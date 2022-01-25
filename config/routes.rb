@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root "articles#index"
 
   resources :articles do
-    resources :comments, :only => [:create, :destroy]
+    resources :comments, :except => [:show]
   end
+
+  get '/articles/:article_id/comments/:id/edit/', to: 'comments#show'
 end
