@@ -9,12 +9,13 @@
   
     <div>
       <%= form.label :body %><br>
-      <%= form.text_area :body %><br>
+      <%= form.text_area :body, cols: 60, rows: 20, placeholder: "Write your post content here...", class: "p-2 border border-secondary rounded mw-100" %><br>
       <% article.errors.full_messages_for(:body).each do |message| %>
         <div><%= message %></div>
       <% end %>
     </div>
 
+  
     <div>
       <%= form.label :status %><br>
       <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
@@ -22,7 +23,7 @@
 
   
     <div>
-      <%= form.submit %>
+      <%= form.submit "Publish", class: "btn btn-primary"%>
     </div>
   <% end %>
   
