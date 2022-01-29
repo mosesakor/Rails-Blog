@@ -28,6 +28,7 @@
  .container {
     max-width: 700px;
     width: 100%;
+    min-height: 70vh;
     margin: 25px auto;
     margin-top: 12px;
     background: white;
@@ -66,4 +67,9 @@
 
  .blue-hover:hover {
      color: blue;
+ }
+
+ .registration-form {
+     margin: 0 auto;
+     max-width: 300px;
  }
