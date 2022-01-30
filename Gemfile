@@ -38,6 +38,9 @@ gem "cssbundling-rails"
 
 gem "jsbundling-rails"
 
+# Markdown Editor Integration
+gem "redcarpet"
+
 
 
 
