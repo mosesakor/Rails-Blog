@@ -1,6 +1,6 @@
 <% unless @articles.empty? %>
   <div>
-      <% @articles.each do |article| %>
+      <% @articles.reverse_each do |article| %>
         <% unless article.archived? %>
           <div class="card p-3 m-2 mb-4 text-dark">
               <p class="text-sm-left mb-0 p-0 font-weight-bold"><%=article.user.first_name %> <%= article.user.last_name %></p>
