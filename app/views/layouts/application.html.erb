@@ -20,9 +20,12 @@
         <%= yield %>
     </main>
     </div>
-    <%= render 'shared/footer' %>
-    <p class="notice"><%= notice %></p>
+     <% unless notice.nil? %>
+      <p class="notice text-center alert alert-info" id="flash-messages"><%= notice %></p>
+    <% end %>
     <p class="alert"><%= alert %></p>
+    <%= render 'shared/footer' %>
+
 
   </body>
 </html>
