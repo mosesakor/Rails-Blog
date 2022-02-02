@@ -15,6 +15,11 @@
 
   <body>
     <%= render 'shared/navbar' %>
+    <% unless @homepage.nil? %>
+      <div class="homepage-img">
+        <%= image_tag('blogwall.jpg', style: "width: 100%") %>
+      </div>
+    <% end %>
     <div class="container">
     <main class="container mx-auto mt-28 px-5 flex">
         <%= yield %>

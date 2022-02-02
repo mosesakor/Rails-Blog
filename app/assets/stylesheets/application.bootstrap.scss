@@ -19,7 +19,6 @@
 
 .tester {
     border: 3px solid red;
-    display: inline;
 }
  body {
      background: #eee;
@@ -33,6 +32,13 @@
     margin-top: 12px;
     background: white;
     padding: 30px;
+ }
+
+ .homepage-img {
+    max-width: 850px;
+    width: 100%;
+    margin: 25px auto;
+    background: white;
  }
 
 .footer {
@@ -74,4 +80,12 @@
      max-width: 300px;
  }
 
+ .homepage-background {
+    background: url( asset-path('blogwall.jpg') ) no-repeat;
+    width: 100%;
+    position: relative;
+}
+
+
+ 
  @import 'actiontext.css';
