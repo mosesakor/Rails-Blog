@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'users/registrations' }
+  devise_for :users, :controllers => { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks'}
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, :except => [:show]
   end
+
 
   get '/articles/:article_id/comments/:id/edit/', to: 'comments#show'
 end
