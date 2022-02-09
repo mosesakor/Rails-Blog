@@ -15,6 +15,9 @@
 
   <body>
     <%= render 'shared/navbar' %>
+    <% unless notice.nil? %>
+      <p class="notice text-center alert alert-info" id="flash-messages"><%= notice %></p>
+    <% end %>
     <% unless @homepage.nil? %>
       <div class="homepage-img">
         <%= image_tag('blogwall.jpg', style: "width: 100%") %>
@@ -25,9 +28,7 @@
         <%= yield %>
     </main>
     </div>
-     <% unless notice.nil? %>
-      <p class="notice text-center alert alert-info" id="flash-messages"><%= notice %></p>
-    <% end %>
+
     <p class="alert"><%= alert %></p>
     <%= render 'shared/footer' %>
 
