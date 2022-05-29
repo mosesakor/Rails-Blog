@@ -1,36 +1,4 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Blogging app built with Rails.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-* TODO
-
-
-* add date and time
-* minimal styling for rendering the blog's content
-* push to github
-* push to heroku
-* add user functionality with authentication
-* update user fields
-* link ideas and models
-* 
